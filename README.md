@@ -1,2 +1,2 @@
 # CacheMeOutside
-A small, simple, compressed key-value store written in Go. 
+A small, simple, compressed, websocketed key-value store written in Go. 

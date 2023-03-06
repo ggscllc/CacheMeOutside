@@ -12,15 +12,15 @@ import (
 	"github.com/ggscllc/websocket"
 )
 
-// echoServer is the WebSocket echo server implementation.
+// cacheServer is the WebSocket echo server implementation.
 // It ensures the client speaks the echo subprotocol and
 // only allows one message every 100ms with a 10 message burst.
-type echoServer struct {
+type cacheServer struct {
 	// logf controls where logs are sent.
 	logf func(f string, v ...interface{})
 }
 
-func (s echoServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (s cacheServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	c, err := websocket.Accept(w, r, &websocket.AcceptOptions{
 		Subprotocols: []string{"echo"},
 	})
